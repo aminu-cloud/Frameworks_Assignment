@@ -1,0 +1,18 @@
+# Load the data
+import pandas as pd
+df = pd.read_csv('metadata.csv')
+
+# Basic info
+print(df.shape)
+print(df.info())
+
+# Check missing values
+print(df.isnull().sum())
+
+# Simple visualization
+import matplotlib.pyplot as plt
+df['year'] = pd.to_datetime(df['publish_time']).dt.year
+year_counts = df['year'].value_counts().sort_index()
+plt.bar(year_counts.index, year_counts.values)
+plt.title('Publications by Year')
+plt.show()
