@@ -1,0 +1,10 @@
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+
+st.title("CORD-19 Data Explorer")
+st.write("Simple exploration of COVID-19 research papers")
+
+# Add interactive elements
+year_range = st.slider("Select year range", 2019, 2022, (2020, 2021))
+# Add visualizations based on selection
